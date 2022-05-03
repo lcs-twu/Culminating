@@ -79,7 +79,7 @@ func drawArrow(){
     t.forward(steps: 3 * scale)
 
     t.right(by: 90)
-    t.forward(steps: 1 * scale - 1)
+    t.forward(steps: 1 * scale)
     t.right(by: 90)
     
     //correct for position
@@ -103,9 +103,22 @@ func drawArrow(){
     t.currentPosition()
     t.currentHeading()
 
-for i in 1...5{
-    drawArrow()
+for xPosition in stride(from: 0, through: 360, by: 90){
+    
+        drawArrow()
+    
 }
+t.left(by: 180)
+t.forward(steps: 450)
+t.right(by: 90)
+t.forward(steps: 55)
+t.right(by: 90)
+for xPosition in stride(from: 0, through: 360, by: 90){
+    
+        drawArrow()
+    
+}
+
 //testing
 t.drawSelf()
 t.currentPosition()
