@@ -71,14 +71,18 @@ func drawShape(){
     t.left(by: 60)
     t.forward(steps: 2*scale)
     t.right(by: 60)
-    t.forward(steps: 2*scale)
-        for i in 1...3{
-            t.left(by: 90)
-            t.forward(steps: 2*scale)
+        for i in 1...20{
+            turtle.forward(steps: 40)
+            turtle.left(by: 90)
+            turtle.forward(steps: 1)
+            turtle.left(by: 90)
+            turtle.forward(steps: 40)
+            turtle.right(by: 90)
+            turtle.forward(steps: 1)
+            turtle.right(by: 90)
         }
-    t.right(by: 180)
-    t.forward(steps: 2*scale)
-    t.left(by: 30)
+
+    t.left(by: 120)
     t.forward(steps: 2*scale)
     t.left(by: 120)
     t.forward(steps: 2*scale)
