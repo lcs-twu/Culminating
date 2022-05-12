@@ -4,8 +4,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 400
-let preferredHeight = 400
+let preferredWidth = 600
+let preferredHeight = 600
 /*:
  ## Required code
  
@@ -72,13 +72,10 @@ func drawShape(){
     t.forward(steps: 2*scale)
     t.right(by: 60)
     t.forward(steps: 2*scale)
-    //remember to do the repeat
-    t.left(by: 90)
-    t.forward(steps: 2*scale)
-    t.left(by: 90)
-    t.forward(steps: 2*scale)
-    t.left(by: 90)
-    t.forward(steps: 2*scale)
+        for i in 1...3{
+            t.left(by: 90)
+            t.forward(steps: 2*scale)
+        }
     t.right(by: 180)
     t.forward(steps: 2*scale)
     t.left(by: 30)
@@ -94,16 +91,16 @@ func drawShape(){
     t.forward(steps: 4*scale)
     }
 
-    for xPosition in stride(from: 0, through: 400, by: 4*scale){
+    for xPosition in stride(from: 0, through: 600, by: 4*scale){
             BasicGraph()
     }
-    t.forward(steps: -24*scale)
+    t.forward(steps: -32*scale)
     t.left(by: 90)
     t.forward(steps: 6*scale-13)
     p.right(by: 90)
     p.penDown()
 }
-for i in 1...4{
+for i in 1...6{
     drawShape()
 }
 
