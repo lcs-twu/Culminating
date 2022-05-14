@@ -4,8 +4,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 400
-let preferredHeight = 200
+let preferredWidth = 600
+let preferredHeight = 600
 /*:
  ## Required code
  
@@ -56,20 +56,95 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  */
 
 // Begin writing your code below (you can remove the examples shown)
-func test1(){
-    turtle.forward(steps: 20)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1)
-    turtle.left(by: 90)
-    turtle.forward(steps: 20)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1)
-    turtle.right(by: 90)
-}
+canvas.highPerformance = true
+let t = Tortoise(drawingUpon: canvas)
+let scale = 20
+t.penUp()
+t.left(by: 90)
+t.forward(steps: 90)
+t.right(by: 90)
+t.forward(steps: 50)
+t.currentHeading()
+t.penDown()
+t.currentPosition()
+func Final(){
+    t.forward(steps: 20)
+    t.penDown()
+    func triangle(){
+        var x = 1
+        t.forward(steps: x)
+        for i in 1...20{
 
-for i in 1...20{
-    test1()
+            t.left(by: 90)
+            t.forward(steps: 1)
+            t.right(by: 90)
+            t.forward(steps: 1)
+            t.right(by: 180)
+            t.forward(steps: x)
+            x += 1
+            
+            t.right(by: 90)
+            t.forward(steps: 1)
+            t.left(by: 90)
+            t.forward(steps: 1)
+            t.left(by: 180)
+            t.forward(steps: x)
+            x += 1
+        }
+    }
+    //fist triangle
+    triangle()
+    //changing first one
+    func change1(){
+        t.penUp()
+        t.currentHeading()
+        t.currentPosition()
+        t.right(by: 90)
+        t.forward(steps: 2*scale)
+        t.right(by: 90)
+        t.forward(steps: 19)
+        t.currentHeading()
+        t.penDown()
+    }
+    change1()
+    //second triangle
+    triangle()
+    //changing second one
+    change1()
+    //third triangle
+    t.penDown()
+
+    t.right(by: 55)
+
+    triangle()
+    //changing third one
+    t.penUp()
+    t.currentHeading()
+    t.currentPosition()
+    t.right(by: 35)
+    t.forward(steps: 6)
+    t.right(by: 90)
+    t.forward(steps: 45)
+    t.penDown()
+    //forth triangle
+    t.left(by: 55)
+    triangle()
 }
+Final()
+t.currentHeading()
+t.currentPosition()
+t.left(by: 665)
+t.forward(steps: 40)
+t.right(by: 90)
+t.currentPosition()
+t.forward(steps: 40)
+t.left(by: 90)
+Final()
+
+
+
+canvas.highPerformance = false
+
 /*:
  ## Show the Live View
  Don't see any results?

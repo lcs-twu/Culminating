@@ -68,6 +68,7 @@ t.forward(steps: 1*scale)
 func drawShape(){
     func BasicGraph(){
     t.penDown()
+        
     t.left(by: 60)
     t.forward(steps: 2*scale)
     t.right(by: 60)
