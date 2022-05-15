@@ -102,7 +102,7 @@ func Final(){
         t.right(by: 90)
         t.forward(steps: 2*scale)
         t.right(by: 90)
-        t.forward(steps: 19)
+        t.forward(steps: scale - 1)
         t.currentHeading()
         t.penDown()
     }
@@ -124,7 +124,7 @@ func Final(){
     t.right(by: 35)
     t.forward(steps: 6)
     t.right(by: 90)
-    t.forward(steps: 45)
+    t.forward(steps: 2*scale + 5)
     t.penDown()
     //forth triangle
     t.left(by: 55)
@@ -134,12 +134,13 @@ Final()
 t.currentHeading()
 t.currentPosition()
 t.left(by: 665)
-t.forward(steps: 40)
+t.forward(steps: 2*scale)
 t.right(by: 90)
 t.currentPosition()
-t.forward(steps: 40)
+t.forward(steps: 2*scale)
 t.left(by: 90)
 Final()
+
 
 
 

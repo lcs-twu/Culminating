@@ -41,8 +41,7 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
@@ -57,22 +56,72 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  */
 
 // Begin writing your code below (you can remove the examples shown)
+//idea from Justin
+print("idea from Justin")
+let t = Tortoise(drawingUpon: canvas)
+let scale = 20
+//draw basic
+canvas.highPerformance = true
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+t.penUp()
+t.forward(steps: 1*scale)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+    t.penDown()
+        
+    t.left(by: 60)
+    t.forward(steps: 2*scale)
+    t.right(by: 150)
 
-// Go back to origin
-p.goToOrigin()
 
-// Change the pen color
-p.penColor = .red
+//func Quarries(){
+//func TriangleBlacken(){
+//    var x = 1
+//    t.forward(steps: x)
+//    for i in 1...17{
+//
+//        t.left(by: 90)
+//        t.forward(steps: 1)
+//        t.right(by: 90)
+//        t.forward(steps: 1)
+//        t.right(by: 180)
+//        t.forward(steps: x)
+//        x += 1
+//
+//        t.right(by: 90)
+//        t.forward(steps: 1)
+//        t.left(by: 90)
+//        t.forward(steps: 1)
+//        t.left(by: 180)
+//        t.forward(steps: x)
+//        x += 1
+//    }
+//}
+//TriangleBlacken()
+//t.forward(steps: 2)
+//t.left(by: 90)
+//        for i in 1...20{
+//            turtle.forward(steps: 40)
+//            turtle.left(by: 90)
+//            turtle.forward(steps: 1)
+//            turtle.left(by: 90)
+//            turtle.forward(steps: 40)
+//            turtle.right(by: 90)
+//            turtle.forward(steps: 1)
+//            turtle.right(by: 90)
+//        }
+//t.penUp()
+//t.forward(steps: 4*scale-4)
+//
+//
+//t.right(by: 90)
+//t.forward(steps: scale+2)
+//t.right(by: 180)
+//t.penDown()
+//TriangleBlacken()
+//}
+//Quarries()
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
-
+canvas.highPerformance = false
 /*:
  ## Show the Live View
  Don't see any results?
