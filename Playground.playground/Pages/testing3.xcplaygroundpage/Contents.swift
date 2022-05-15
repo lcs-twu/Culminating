@@ -41,8 +41,7 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
@@ -57,22 +56,57 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  */
 
 // Begin writing your code below (you can remove the examples shown)
+//idea from Justin
+print("idea from Justin")
+let t = Tortoise(drawingUpon: canvas)
+let scale = 20
+//draw basic
+canvas.highPerformance = true
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
-
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
-
-// Go back to origin
-p.goToOrigin()
-
-// Change the pen color
-p.penColor = .red
-
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
-
+//t.penUp()
+//t.forward(steps: 10*scale)
+//t.left(by: 90)
+//t.forward(steps: 10*scale)
+//t.right(by: 90)
+func BASIC(){
+t.penDown()
+t.left(by: 60)
+t.forward(steps: 2*scale)
+t.left(by: 30)
+t.forward(steps: 2*scale)
+t.left(by: 30)
+t.forward(steps: 2*scale)
+t.left(by: 120)
+t.forward(steps: 2*scale)
+t.left(by: 30)
+t.forward(steps: 2*scale)
+t.left(by: 30)
+t.forward(steps: 2*scale)
+}
+for i in 1...4{
+    for xPosition in stride(from: 0, through: 400, by: 4*scale){
+        BASIC()
+    }
+    t.currentHeading()
+    t.currentPosition()
+    t.penUp()
+    t.forward(steps: 10*scale-12)
+    t.penDown()
+}
+t.forward(steps: -562)
+t.left(by: 90)
+t.forward(steps: 10*scale-50)
+for i in 1...4{
+    for xPosition in stride(from: 0, through: 400, by: 4*scale){
+        BASIC()
+    }
+    t.currentHeading()
+    t.currentPosition()
+    t.penUp()
+    t.forward(steps: 10*scale-12)
+    t.penDown()
+}
+canvas.highPerformance = false
 /*:
  ## Show the Live View
  Don't see any results?
