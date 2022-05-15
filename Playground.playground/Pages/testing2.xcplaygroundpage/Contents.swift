@@ -83,6 +83,7 @@ t.forward(steps: 2*scale)
 t.left(by: 30)
 t.forward(steps: 2*scale)
 }
+func GRAPH(){
 for i in 1...4{
     for xPosition in stride(from: 0, through: 400, by: 4*scale){
         BASIC()
@@ -93,18 +94,16 @@ for i in 1...4{
     t.forward(steps: 10*scale-12)
     t.penDown()
 }
-t.forward(steps: -562)
+t.currentPosition()
+t.penUp()
+t.forward(steps: -752)
 t.left(by: 90)
 t.forward(steps: 10*scale-50)
-for i in 1...4{
-    for xPosition in stride(from: 0, through: 400, by: 4*scale){
-        BASIC()
-    }
-    t.currentHeading()
-    t.currentPosition()
-    t.penUp()
-    t.forward(steps: 10*scale-12)
-    t.penDown()
+t.right(by: 90)
+t.penDown()
+}
+for i in 1...5{
+    GRAPH()
 }
 
 
