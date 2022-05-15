@@ -64,13 +64,28 @@ let scale = 20
 canvas.highPerformance = true
 
 t.penUp()
-t.forward(steps: 1*scale)
-
-    t.penDown()
-        
-    t.left(by: 60)
-    t.forward(steps: 2*scale)
-    t.right(by: 150)
+t.forward(steps: 10*scale)
+t.left(by: 90)
+t.forward(steps: 10*scale)
+t.right(by: 90)
+func BASIC(){
+t.penDown()
+t.left(by: 60)
+t.forward(steps: 2*scale)
+t.left(by: 30)
+t.forward(steps: 2*scale)
+t.left(by: 30)
+t.forward(steps: 2*scale)
+t.left(by: 120)
+t.forward(steps: 2*scale)
+t.left(by: 30)
+t.forward(steps: 2*scale)
+t.left(by: 30)
+t.forward(steps: 2*scale)
+}
+for xPosition in stride(from: 0, through: 400, by: 4*scale){
+    BASIC()
+}
 
 
 //func Quarries(){
